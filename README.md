@@ -1,6 +1,6 @@
 <div align="center">
   <div>
-    <img width="150" height="150" src="https://video.udacity-data.com/topher/2018/September/5b9e44d3_2-13-http-in-the-real-world2x/2-13-http-in-the-real-world2x.jpg">
+    <img height="250" src="https://wallpapershome.ru/images/pages/pic_h/15631.jpg">
     <h1>Travel App</h1>
   </div>
   <p>
@@ -15,7 +15,7 @@
 # (e.g. 1dv444 ...)
 Weatherbit_API=****
 # (e.g. 12g3g3 ...)
-Pixabay_API=19795725-****
+Pixabay_API=****
 # (e.g. User123)
 GeoNames_username=****
 ```
@@ -52,7 +52,7 @@ npm start [-- --port=3000]
 * `src/client/views` - put all HTMLs here;
 * `src/client/views/index.html` - main app HTML;
 * `src/client/assets/img` - put images here. Don't forget to use correct path: `assets/img/some.jpg`;
-* `src/client/assets/fonts` - Place for fonts. Don't forget to use correct path: `assets/img/some.jpg`;
+* `src/client/assets/fonts` - Place for fonts. Don't forget to use correct path: `assets/fonts/some.woff`;
 * `src/client/styles` - put custom app SCSS styles here. Don't forget to import them in `index.js`;
 * `src/client/js` - put custom app scripts here;
 * `src/client/js/app.js` - main app file where you implement all application logic;
@@ -104,4 +104,4 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 
 ## Import js files:
 1. Create another js module in `./js/` folder
-2. Import modules in `./js/index.js` file
+2. Import modules in `./js/app.js` file
