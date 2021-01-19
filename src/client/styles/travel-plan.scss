@@ -1,0 +1,250 @@
+#plans {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+trip-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  @media (min-width: $minDeskWidth) and (orientation:landscape) {
+    width: 45vw;
+  }
+  background: $neutral-primary;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 2px 0 rgba(200, 200, 200, 0.6), 0 2px 6px 2px rgba(200, 200, 200, 0.2);
+
+  .header {
+    position: relative;
+    background: $sec-bg-color;
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    width: 100%;
+    padding: 1em;
+
+    .name {
+      font-size: 1.3em;
+    }
+
+    .ctrl-plan {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin: auto 0;
+
+      .delete {
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: all 350ms ease;
+
+        &:hover {
+          color: darkred;
+        }
+      }
+
+      .print {
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: all 350ms ease;
+
+        &:hover {
+          color: darkred;
+        }
+      }
+    }
+  }
+
+  trip-destination {
+    position: relative;
+    box-shadow: 0 1px 2px 0 rgba(200, 200, 200, 0.6), 0 2px 6px 2px rgba(200, 200, 200, 0.2);
+    padding: 0.5em 0.8em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    @media (min-width: $minDeskWidth) and (orientation:landscape) {
+      flex-wrap: nowrap;
+    }
+
+    &.warn {
+      box-shadow: 0 1px 2px 0 rgba(254, 211, 48, 0.6), 0 2px 6px 2px rgba(254, 211, 48, 0.2);
+    }
+
+    &.dang {
+      box-shadow: 0 1px 2px 0 rgba(252, 92, 101, 0.6), 0 2px 6px 2px rgba(252, 92, 101, 0.2);
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      @media (min-width: $minDeskWidth) and (orientation:landscape) {
+        width: 40%;
+      }
+
+      .photo {
+        align-self: center;
+        width: 90%;
+        border-radius: 5%;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      @media (min-width: $minDeskWidth) and (orientation:landscape) {
+        width: 50%;
+      }
+
+      .flight-info {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          text-align: right;
+          font-variant: small-caps;
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      background: $thr-bg-color;
+    }
+  }
+
+  .delete-dest {
+    font-size: 1.5em;
+    position: absolute;
+    top: 0.5em;
+    right: 1.4em;
+    @media (min-width: $minDeskWidth) and (orientation:landscape) {
+      right: 0.8em;
+    }
+    cursor: pointer;
+    transition: all 350ms ease;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+
+  .add-dest-btn {
+    margin: 1em;
+  }
+
+  table.weather {
+    align-self: center;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    & thead tr {
+      background-color: #009879;
+      color: #fff;
+      text-align: center;
+    }
+
+    & th,
+    & td {
+      padding: 12px 15px;
+    }
+
+    & tbody tr {
+      border-bottom: thin solid #ddd;
+      background: $bg-color;
+
+      .weather-icon {
+        width: 4em;
+        height: 4em;
+        cursor: pointer;
+      }
+    }
+
+    & tbody tr:nth-of-type(even) {
+      background: $sec-bg-color;
+    }
+
+    & tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+
+    & tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+    }
+  }
+}
+
+#inputForm .wrapped {
+  position: fixed;
+  z-index: 9999;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(80, 80, 80, 0.8);
+  top: 0;
+  opacity: 0;
+  left: -100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms ease;
+
+  &.active {
+    opacity: 1;
+    left: 0;
+
+    .content {
+      overflow-y: auto;
+      box-shadow: 0 1px 2px 0 rgba(200, 200, 200, 0.6), 0 2px 6px 2px rgba(200, 200, 200, 0.2);
+      z-index: 10000;
+      max-height: 95vh;
+      width: 80%;
+      @media (min-width: $minDeskWidth) and (orientation:landscape) {
+        width: 50%;
+      }
+      background: $sec-bg-color;
+      border-radius: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.7em;
+      padding: 1em;
+    }
+
+    label {
+      display: flex;
+      gap: 0.7em;
+    }
+
+    input, textarea {
+      flex: 1;
+      background: $thr-bg-color;
+      color: $mainFontColor;
+      font-family: $mainFont;
+      font-size: $mainFontSize;
+      font-weight: $mainFontWeight;
+      border-radius: 0.5em;
+      padding: 0.3em;
+      transition: background 300ms ease;
+
+      &:focus {
+        box-shadow: 0 1px 2px 0 rgba(200, 200, 200, 0.6), 0 2px 6px 2px rgba(200, 200, 200, 0.2);
+      }
+    }
+
+    .header {
+      text-align: center;
+      font-size: 1.25em
+    }
+  }
+}

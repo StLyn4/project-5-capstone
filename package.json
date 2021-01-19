@@ -1,7 +1,7 @@
 {
-  "name": "project-4",
+  "name": "project-5",
   "version": "1.0.0",
-  "description": "## This project requires you to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites.",
+  "description": "A travel application.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config/prod.js",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
     "@babel/preset-env": "^7.12.11",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",

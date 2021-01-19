@@ -11,10 +11,12 @@ $mainFontWeight          : 400;
 $mainLineHeight          : 1.4;
 $headerHeight            : 6vh;
 $footerHeight            : 4vh;
+$minDeskWidth            : 600px;
 
 // Main color
-$sec-bg-color            : #222;
 $bg-color                : #323232;
+$sec-bg-color            : #222;;
+$thr-bg-color            : #282828;
 $primary-color           : #444ce0;
 $success-color           : #26de81;
 $danger-color            : #fc5c65;
@@ -24,12 +26,12 @@ $purple-color            : #8854d0;
 
 // Neutral Color
 $neutral-primary         : #303133;
-$neutral-regular         : #606266;
-$neutral-secondary       : #909399;
+$neutral-regular         : #505050;
+$neutral-secondary       : #707049;
 $neutral-placeholder     : #c0c4cc;
 
 // Border Color
-$border-base             : #cdcfe6;
+$border-base             : #212121;
 $border-light            : #e4e7ed;
 $border-lighter          : #ebeef5;
 $border-lightex          : #e2f6fc;
