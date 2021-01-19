@@ -172,3 +172,9 @@ h4 {
     transform: rotate(360deg);
   }
 }
+
+.req:after {
+  color: darkred;
+  content: ' *';
+  display:inline;
+}
