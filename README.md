@@ -60,6 +60,7 @@ npm start [-- --port=3000]
 * `src/client/static/` - folder with extra static assets that will be copied into output folder;
 * `src/server` - server side folder;
 * `webpack.config` - folder with configs for Webpack (both dev and prod).
+* `__test__` - folder with JEST tests.
 
 <div align="center">
   <h2>Settings:</h2>
