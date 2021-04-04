@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const argv = require('yargs').argv;
+const { argv } = require('yargs');
 const child_process = require('child_process');
 const APIs = require('./APIs');
 
@@ -16,8 +16,15 @@ app.use(bodyParser.urlencoded({
 }))
 
 // You can make an additional check for the request method, but in this project this is unnecessary
-for (const [address, callback] of Object.entries(APIs)) {
-  app.get(address, callback);
+for (const [address, route] of Object.entries(APIs)) {
+  const method = route.method.toLowerCase();
+  if (method === undefined) {
+    throw new Error(`specify the query method for the address "${address}"`);
+  }
+  if (!Object.hasOwnProperty.call(app, method)) {
+    throw new Error(`no such method: ${method}`);
+  }
+  app[method](address, route.callback);
 }
 
 // designates what port the app will listen to for incoming requests
@@ -29,12 +36,15 @@ app.listen(argv.mode === 'dev' ? 3000 : port, () => {
     assert(argv.config, 'In development mode, the config file must be specified!');
     const WPC = require(path.resolve(argv.config));
     const devPort = WPC.devServer.port || 8080;
+
     if (port === devPort) {
       throw new TypeError('Server for API and development must be running on different ports!\n' +
       'Change the port for the development server in the config!');
     }
+
     console.log('The server for the API started on the 3000th port.');
     console.log(`The development server will run on port ${devPort} (just wait).`);
+
     child_process.spawn(
      'webpack-dev-server',
       ['--open', '--config', argv.config],

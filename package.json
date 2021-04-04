@@ -1,7 +1,7 @@
 {
-  "name": "project-5",
+  "name": "travel-manager",
   "version": "1.0.0",
-  "description": "A travel application.",
+  "description": "Travel app to make your weekend happier =)",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config/prod.js",
@@ -9,14 +9,22 @@
     "start": "node src/server/server.js",
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Vsevolod Volkov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StLyn4/travel-planner.git"
+  },
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "offline-plugin": "^5.0.7",
     "yargs": "^16.2.0"
   },
   "devDependencies": {
@@ -42,7 +50,6 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.1",
-    "webpack-merge": "^5.7.3",
-    "workbox-webpack-plugin": "^6.0.2"
+    "webpack-merge": "^5.7.3"
   }
 }

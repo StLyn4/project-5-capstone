@@ -4,10 +4,12 @@
     <h1>Travel App</h1>
   </div>
   <p>
-    This project requires you to build out a travel app that, at a minimum, obtains a desired trip location & date from the user, and displays weather and an image of the location using information obtained from external APIs. Given that this is the Capstone project, it's highly encouraged for you to go above and beyond, adding additional functionality and customization to truly stand out with a project you are proud to have at the top of your portfolio!
+    Travel app to make your weekend happier =)
   </p>
 </div>
 
+### Demo
+You can find working site [here](https://vv-travel-manager.herokuapp.com/)
 
 ## Build Setup:
 * Insert your API keys to .env file like this:
@@ -23,11 +25,15 @@ GeoNames_username=****
 ``` bash
 # Install dependencies:
 npm install
+# or
+yarn install
 ```
 
 ``` bash
 # Testing with JEST
 npm run test
+# or
+yarn run test
 ```
 
 * For development mode:
@@ -35,16 +41,22 @@ npm run test
 # Server with hot reload at http://localhost:8080/
 # Please note that the script will start an additional server on the 3000th port for the API
 npm run dev
+# or
+yarn run dev
 ```
 
 * For production mode:
 ``` bash
 # Output will be at dist/ folder
 npm run build
+# or
+yarn run build
 # Server at http://localhost:[port]/
 # Note: if you want to use your costume port, you need to use "--" twice on the command line
 # (see: https://docs.npmjs.com/cli/run-script)
 npm start [-- --port=3000]
+# or
+yarn run start [--port=3000]
 ```
 
 ## Project Structure:
